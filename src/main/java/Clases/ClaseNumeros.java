@@ -17,7 +17,7 @@ public class ClaseNumeros {
         System.out.println("\n ))) Cuadrados Únicos (((");
         System.out.println("\nLista antes de modificar: " + lista);
         HashSet<Integer> listaCuadrados = lista.stream()
-                .distinct()
+                .filter(n -> n % 2 == 0)
                 .map(n -> n * n)
                 .collect(Collectors.toCollection(HashSet::new));
 
