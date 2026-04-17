@@ -9,12 +9,12 @@ public class ClasePruebas {
 
         ArrayList<Integer> lista = new ArrayList<Integer>();
         lista.add(23);
-        lista.add(54);
+        lista.add(0);
         lista.add(34);
         lista.add(8);
-        lista.add(93);
+        lista.add(-93);
 
-        ClaseNumeros.multiplicador(lista, 5);
+        UtileriaNumeros.multiplicador(lista, 5);
 
         // Ejemplo del método Filtro Selectivo
 
@@ -28,13 +28,13 @@ public class ClasePruebas {
         listaPalabras.add("hoja");
         listaPalabras.add("quesadilla");
 
-        ClaseCadenas.filtroSelectivo(listaPalabras, "a");
+        UtileriaCadenas.filtroSelectivo(listaPalabras, "a", 5);
 
         //Ejemplo del método Conversor de Mayúsculas.
         //Se reutilizó la lista del ejemplo anterior.
 
         System.out.println("Lista después de convertirla: " +
-                ClaseCadenas.conversorDeMayusculas(listaPalabras));
+                UtileriaCadenas.conversorDeMayusculas(listaPalabras));
 
         //Ejemplo del método Cuadrados Únicos
 
@@ -46,6 +46,7 @@ public class ClasePruebas {
         listaDuplicados.add(8);
         listaDuplicados.add(34);
 
-        ClaseNumeros.cuadradosUnicos(listaDuplicados);
+        System.out.println("Lista después de modificar: " +
+                UtileriaNumeros.cuadradosUnicos(listaDuplicados));
     }
 }
