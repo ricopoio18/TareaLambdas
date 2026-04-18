@@ -35,7 +35,10 @@ public class UtileriaNumeros {
         return contadorFrecuencias;
     }
 
-
+    public static void topFrecuencias(HashMap<String, Integer> map, int n){
+        if (map == null) return;
+        map.replaceAll((palabra,frecuencia) -> frecuencia > n ? n : frecuencia);
+    }
 
 
 }
