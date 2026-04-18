@@ -26,19 +26,10 @@ public class UtileriaNumeros {
         return new HashSet<>(listaCuadrados);
     }
 
-    public static HashMap<String, Integer> contadorFrecuencias(ArrayList<String> lista){
-        HashMap<String, Integer> contadorFrecuencias = new HashMap<>();
-        lista.forEach(p -> {
-            if (p != null) contadorFrecuencias.merge(p, 1, (p1, p2) -> p1 + p2);
-        });
-
-        return contadorFrecuencias;
+    public static void modificadorInventario(HashMap<String,Double> inventario){
+        inventario.forEach((i,j) ->
+                System.out.println("\nProducto: " + i + "\nPrecio sin descuento: " + j +
+                        "\nPrecio con descuento de 10%: $" + (j*0.9) ));
     }
-
-    public static void topFrecuencias(HashMap<String, Integer> map, int n){
-        if (map == null) return;
-        map.replaceAll((palabra,frecuencia) -> frecuencia > n ? n : frecuencia);
-    }
-
 
 }
