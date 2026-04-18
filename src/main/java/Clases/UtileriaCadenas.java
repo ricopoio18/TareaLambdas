@@ -1,8 +1,6 @@
 package Clases;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class UtileriaCadenas {
@@ -42,5 +40,18 @@ public class UtileriaCadenas {
                 .map(p -> p.getKey())
                 .collect(Collectors.toList());
         return new ArrayList<>(lista);
+    }
+
+    public static HashSet<String> deDuplicacionPalabras(String frase, int tamaño){
+        if (frase == null || frase.isBlank()) {
+            return new HashSet<>();
+        }
+        String[] palabras = frase.split("\\W+");
+
+        return Arrays.stream(palabras)
+                .filter(p -> !p.isBlank())
+                .filter(p -> p.length() < tamaño)
+                .map(String::toLowerCase)
+                .collect(Collectors.toCollection(HashSet::new));
     }
 }
